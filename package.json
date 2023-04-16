@@ -1,0 +1,74 @@
+{
+  "name": "mystatusbaralt",
+  "displayName": "MyStatusBarAlt",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+			"title": "Status Bar alt",
+			"properties": {
+				"statusBarCustomItem.text": {
+					"type": "string",
+					"default": "Carlos Gabriel",
+					"description": "Custom Item Text (can be your name)"
+				},
+				"statusBarCustomItem.tooltip": {
+					"type": "string",
+					"default": "This Visual Studio Code belongs to Carlos Gabriel",
+					"description": "Custom Item Tooltip Text"
+				},
+				"statusBarCustomItem.icon": {
+					"type": "string",
+					"default": "🔥",
+					"description": "Custom Item Icon"
+				},
+				"statusBarCustomColor.primaryBkColor": {					
+					"type": "string",
+					"default": "#9f00a6",
+					"description": "StatusBar background color" 
+				},
+				"statusBarCustomColor.secondaryBkColor": {
+					"type": "string",
+					"default": "#8a008f",
+					"description": "StatusBar No Folder and Debugging background color" 
+				},
+				"statusBarCustomColor.foregroundColor": {
+					"type": "string",
+					"default": "#ffffff",
+					"description": "Foreground (text) color" 
+				}		
+			}
+		}
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
